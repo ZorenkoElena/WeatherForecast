@@ -1,0 +1,67 @@
+body {
+	background: rgba(104, 238, 232, 0.1);
+}
+.weather {
+	font-family: "Cerebri Sans", Helvetica, Arial, sans-serif;
+	color: #264e70;
+
+	background: #fff;
+	max-width: 600px;
+	margin: 60px auto 15px;
+	padding: 40px;
+	border-radius: 10px;
+	box-shadow: 10px 10px 50px rgb(65 50 100 / 20%);
+}
+
+.search-form {
+	margin-bottom: 20px;
+}
+
+.currentWeather .city {
+	color: #0e2c48;
+	font-size: 30px;
+}
+
+.currentWeather .time {
+	color: #0e2c48;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.minorFigures {
+	color: #707579;
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.majorFigures {
+	color: #0e2c48;
+	font-size: 60px;
+	margin-bottom: 35px;
+}
+
+.units {
+	font-size: 16px;
+	position: relative;
+	top: -30px;
+	left: -10px;
+}
+
+.units a {
+	text-decoration: none;
+}
+
+.weather-forecast {
+	text-align: center;
+}
+
+.weather-forecast .min {
+	color: #707579;
+}
+.signature {
+	color: #707579;
+	max-width: 600px;
+	margin: 0 auto;
+	font-size: 12px;
+	text-align: center;
+}
