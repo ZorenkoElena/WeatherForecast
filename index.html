@@ -18,6 +18,8 @@
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="src/style.css" />
+
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -57,19 +59,19 @@
 					<div class="currentWeather">
 						<div class="row">
 							<div class="col-6">
-								<div class="city" id="currentCity">Lviv</div>
-								<div class="time" id="currentTime">Sunday, 13:27</div>
+								<div class="city" id="city">Lviv</div>
+								<div class="time" id="dayAndTime">Sunday, 13:27</div>
 								<div class="minorFigures">
-									<div id="currentWeaterDiscription">Cloudy</div>
-									<div id="currentHumidity">Precipitation: 58%</div>
-									<div id="currentWind">Wind: 9km/h</div>
-									<div id="currentUvIndex">UV Index: 4</div>
+									<div id="description">Cloudy</div>
+									<div id="humidity">Precipitation: 58%</div>
+									<div id="wind">Wind: 9km/h</div>
+									<div id="uvIndex">UV Index: 0</div>
 								</div>
 							</div>
 							<div class="col-6">
 								<div class="majorFigures">
 									<i class="fa-solid fa-cloud"></i>
-									<span class="temperature" id="currentTemp">27</span>
+									<span class="temperature" id="temperature">27</span>
 									<span class="units"
 										><a href="#" class="active" id="celsius">°C</a>
 										&nbsp;|&nbsp;
