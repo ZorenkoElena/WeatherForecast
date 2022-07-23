@@ -17,10 +17,11 @@
 			integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
 			crossorigin="anonymous"
 		/>
+		<link rel="stylesheet" href="src/style.css" />
 	</head>
 	<body>
-		<main>
-			<div class="container">
+		<div class="container">
+			<main>
 				<div class="weather">
 					<form class="search-form" id="search-form">
 						<div class="row">
@@ -44,7 +45,7 @@
 							</div>
 							<div class="col-3">
 								<button
-									class="btn btn-success w-100"
+									class="btn btn-secondary w-100"
 									id="current-location-button"
 								>
 									Current
@@ -58,22 +59,27 @@
 							<div class="col-6">
 								<div class="city" id="currentCity">Lviv</div>
 								<div class="time" id="currentTime">Sunday, 13:27</div>
-								<div id="currentWeaterDiscription">Cloudy</div>
-								<div id="currentHumidity">58 %</div>
-								<div id="currentWind">9 km/h</div>
+								<div class="minorFigures">
+									<div id="currentWeaterDiscription">Cloudy</div>
+									<div id="currentHumidity">Precipitation: 58%</div>
+									<div id="currentWind">Wind: 9km/h</div>
+									<div id="currentUvIndex">UV Index: 4</div>
+								</div>
 							</div>
 							<div class="col-6">
-								<div>
+								<div class="majorFigures">
 									<i class="fa-solid fa-cloud"></i>
 									<span class="temperature" id="currentTemp">27</span>
-									<span class="units">
-										<a href="#" class="active" id="celsius">°C</a>
+									<span class="units"
+										><a href="#" class="active" id="celsius">°C</a>
 										&nbsp;|&nbsp;
 										<a href="#" id="farinheit">°F</a>
 									</span>
 								</div>
-								<div>Min: 19°...Max: 32°</div>
-								<div>Sunrise: 5:09...Sundown: 20:52</div>
+								<div class="minorFigures">
+									<div>Max: 32°...Min: 19°</div>
+									<div>Sunrise: 5:09...Sundown: 20:52</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -81,48 +87,49 @@
 					<hr />
 
 					<div class="weather-forecast">
-						<div class="row day+1">
-							<div class="col day">Sunday</div>
-							<div class="col icon">☀️</div>
-							<div class="col temp">min: 19°...max: 24°</div>
-						</div>
-						<div class="row day+2">
-							<div class="col day">Monday</div>
-							<div class="col icon">🌧</div>
-							<div class="col temp">min: 14°...max: 22°</div>
-						</div>
-						<div class="row day+3">
-							<div class="col day">Tuesday</div>
-							<div class="col icon">⛅️</div>
-							<div class="col temp">min: 19°...max: 25°</div>
-						</div>
-						<div class="row day+4">
-							<div class="col day">Wednesday</div>
-							<div class="col icon">🌤</div>
-							<div class="col temp">min: 18°...max: 25°</div>
-						</div>
-						<div class="row day+5">
-							<div class="col day">Thursday</div>
-							<div class="col icon">⛅️</div>
-							<div class="col temp">min: 19°...max: 28°</div>
-						</div>
-						<div class="row day+6">
-							<div class="col day">Friday</div>
-							<div class="col icon">☀️</div>
-							<div class="col temp">min: 22°...max: 30°</div>
+						<div class="row">
+							<div class="col-2 day+1">
+								<div class="col day">Sun</div>
+								<div class="col icon">☀️</div>
+								<div class="col temp">24° <span class="min">19°</span></div>
+							</div>
+							<div class="col-2 day+2">
+								<div class="col day">Mon</div>
+								<div class="col icon">🌧</div>
+								<div class="col temp">24° <span class="min">19°</span></div>
+							</div>
+							<div class="col-2 day+3">
+								<div class="col day">Tue</div>
+								<div class="col icon">⛅️</div>
+								<div class="col temp">24° <span class="min">19°</span></div>
+							</div>
+							<div class="col-2 day+4">
+								<div class="col day">Wed</div>
+								<div class="col icon">🌤</div>
+								<div class="col temp">24° <span class="min">19°</span></div>
+							</div>
+							<div class="col-2 day+5">
+								<div class="col day">Thu</div>
+								<div class="col icon">⛅️</div>
+								<div class="col temp">24° <span class="min">19°</span></div>
+							</div>
+							<div class="col-2 day+6">
+								<div class="col day">Fri</div>
+								<div class="col icon">☀️</div>
+								<div class="col temp">24° <span class="min">19°</span></div>
+							</div>
 						</div>
 					</div>
-
-					<hr />
 				</div>
-			</div>
-		</main>
-		<footer>
-			<div class="container signature">
-				This project was coded by Elena Zorenko and is
-				<a href="">open-sourced on GitHub</a> and
-				<a href="">hosted on Netlify</a>
-			</div>
-		</footer>
+			</main>
+			<footer>
+				<div class="signature">
+					This project was coded by Elena Zorenko and is
+					<a href="">open-sourced on GitHub</a> and
+					<a href="">hosted on Netlify</a>
+				</div>
+			</footer>
+		</div>
+		<script src="src/app.js"></script>
 	</body>
 </html>
