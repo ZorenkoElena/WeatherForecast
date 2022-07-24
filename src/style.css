@@ -38,6 +38,7 @@ body {
 	color: #0e2c48;
 	font-size: 60px;
 	margin-bottom: 35px;
+	margin-left: -20px;
 }
 
 .units {
@@ -51,6 +52,14 @@ body {
 	text-decoration: none;
 }
 
+.inactive {
+	color: #0e2c48;
+}
+
+.inactive:hover {
+	cursor: auto;
+	color: #0e2c48;
+}
 .weather-forecast {
 	text-align: center;
 }
@@ -58,6 +67,10 @@ body {
 .weather-forecast .min {
 	color: #707579;
 }
+.values {
+	color: #264e70;
+}
+
 .signature {
 	color: #707579;
 	max-width: 600px;
