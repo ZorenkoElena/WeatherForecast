@@ -5,11 +5,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
-
-		<script
-			src="https://kit.fontawesome.com/e6a4677cc8.js"
-			crossorigin="anonymous"
-		></script>
 		<!-- CSS only -->
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
@@ -59,28 +54,42 @@
 					<div class="currentWeather">
 						<div class="row">
 							<div class="col-6">
-								<div class="city" id="city">Lviv</div>
-								<div class="time" id="dayAndTime">Sunday, 13:27</div>
+								<div class="city" id="city"></div>
+								<div class="time" id="dayAndTime"></div>
 								<div class="minorFigures">
 									<div id="description">Cloudy</div>
-									<div id="humidity">Precipitation: 58%</div>
-									<div id="wind">Wind: 9km/h</div>
-									<div id="uvIndex">UV Index: 0</div>
+									<div>
+										Humidity: <span class="values" id="humidity"> </span> %
+									</div>
+									<div>Wind: <span class="values" id="wind"> </span> km/h</div>
+									<div>
+										Pressure: <span class="values" id="pressure"> </span> hPa
+									</div>
 								</div>
 							</div>
 							<div class="col-6">
 								<div class="majorFigures">
-									<i class="fa-solid fa-cloud"></i>
-									<span class="temperature" id="temperature">27</span>
+									<img src="#" alt="" id="icon" /><span
+										class="temperature"
+										id="temperature"
+									>
+									</span>
 									<span class="units"
-										><a href="#" class="active" id="celsius">°C</a>
+										><a href="#" class="inactive" id="celsius">°C</a>
 										&nbsp;|&nbsp;
 										<a href="#" id="farinheit">°F</a>
 									</span>
 								</div>
 								<div class="minorFigures">
-									<div>Max: 32°...Min: 19°</div>
-									<div>Sunrise: 5:09...Sundown: 20:52</div>
+									<div>
+										Max: <span class="values" id="maxTemp"> </span>°...Min:
+										<span class="values" id="minTemp"> </span>°
+									</div>
+									<div>
+										Sunrise:
+										<span class="values" id="sunrise"> </span> ...Sunset:
+										<span class="values" id="sunset"> </span>
+									</div>
 								</div>
 							</div>
 						</div>
