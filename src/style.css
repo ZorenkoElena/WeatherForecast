@@ -63,6 +63,9 @@ body {
 .weather-forecast {
 	text-align: center;
 }
+.weather-forecast .icon {
+	max-width: 60px;
+}
 
 .weather-forecast .min {
 	color: #707579;

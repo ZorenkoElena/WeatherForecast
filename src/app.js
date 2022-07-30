@@ -10,6 +10,8 @@ const dayOfWeek = [
 	"Suturday",
 ];
 
+const dayOfWeekContracted = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sut"];
+
 function showTime(time) {
 	const currentHours = ("0" + time.getHours()).slice(-2);
 	const currentMinute = ("0" + time.getMinutes()).slice(-2);
@@ -17,15 +19,52 @@ function showTime(time) {
 	return `${currentHours}:${currentMinute}`;
 }
 
-function formatDate(time) {
-	const currentDayOfWeek = time.getDay();
+function formatDate(timestamp) {
+	const currentDayOfWeek = timestamp.getDay();
 	return `${dayOfWeek[currentDayOfWeek]}`;
+}
+
+function formatDay(timestamp) {
+	let date = new Date(timestamp * 1000);
+
+	const dayOfWeek = date.getDay();
+	return `${dayOfWeekContracted[dayOfWeek]}`;
 }
 
 document.querySelector("#dayAndTime").innerHTML = `${formatDate(today)}
  ${showTime(today)}`;
 
 let apiKey = "d74cc05cdf52565f559ffa4ab891cb08";
+
+function getForecast(coordinates) {
+	let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=current,minutely,hourly,alerts&units=metric&appid=${apiKey}`;
+	axios.get(url).then(showForecast);
+}
+
+function showForecast(response) {
+	let forecast = response.data.daily;
+	let forecastOnWeek = `<div class="row">`;
+
+	forecast.forEach(function (forecastday, index) {
+		if (index > 0 && index < 7) {
+			forecastOnWeek =
+				forecastOnWeek +
+				`<div class="col-2">
+          <div>${formatDay(forecastday.dt)}</div>
+          <img src="http://openweathermap.org/img/wn/${
+						forecastday.weather[0].icon
+					}@2x.png" alt=""
+          class="icon" />
+          <div>${Math.round(forecastday.temp.max)}° 
+            <span class="min">${Math.round(forecastday.temp.min)} °</span>
+          </div>
+        </div>`;
+		}
+	});
+	forecastOnWeek = forecastOnWeek + `</div>`;
+
+	document.querySelector("#weather-forecast").innerHTML = forecastOnWeek;
+}
 
 function showRelevantWeather(response) {
 	document.querySelector("#city").innerHTML = response.data.name;
@@ -42,8 +81,7 @@ function showRelevantWeather(response) {
 	currentTempCelsius = Math.round(response.data.main.temp);
 	document.querySelector("#temperature").innerHTML = currentTempCelsius;
 
-	let icon = response.data.weather[0].icon;
-	let weatherIcon = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+	let weatherIcon = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
 	document.querySelector("#icon").setAttribute("src", weatherIcon);
 
 	document
@@ -57,6 +95,8 @@ function showRelevantWeather(response) {
 	document.querySelector("#minTemp").innerHTML = Math.round(
 		response.data.main.temp_min
 	);
+
+	getForecast(response.data.coord);
 
 	let sunrise = new Date(response.data.sys.sunrise * 1000);
 	let sundown = new Date(response.data.sys.sunset * 1000);
