@@ -4,7 +4,6 @@ body {
 .weather {
 	font-family: "Cerebri Sans", Helvetica, Arial, sans-serif;
 	color: #264e70;
-
 	background: #fff;
 	max-width: 600px;
 	margin: 60px auto 15px;
@@ -48,21 +47,10 @@ body {
 	left: -10px;
 }
 
-.units a {
-	text-decoration: none;
-}
-
-.inactive {
-	color: #0e2c48;
-}
-
-.inactive:hover {
-	cursor: auto;
-	color: #0e2c48;
-}
 .weather-forecast {
 	text-align: center;
 }
+
 .weather-forecast .icon {
 	max-width: 60px;
 }
@@ -70,6 +58,7 @@ body {
 .weather-forecast .min {
 	color: #707579;
 }
+
 .values {
 	color: #264e70;
 }
