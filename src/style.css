@@ -1,72 +1,189 @@
-body {
-	background: rgba(104, 238, 232, 0.1);
+/* body {
+  background: rgba(104, 238, 232, 0.1);
+  background: grey;
+} */
+
+:root {
+  --major-color: #264e70;
+  --second-color: #0e2c48;
+  --minor-color: #5a5e61;
 }
+
+.background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -100;
+}
+
 .weather {
-	font-family: "Cerebri Sans", Helvetica, Arial, sans-serif;
-	color: #264e70;
-	background: #fff;
-	max-width: 600px;
-	margin: 60px auto 15px;
-	padding: 40px;
-	border-radius: 10px;
-	box-shadow: 10px 10px 50px rgb(65 50 100 / 20%);
+  font-family: 'Cerebri Sans', Helvetica, Arial, sans-serif;
+  color: var(--major-color);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  max-width: 600px;
+  margin: 60px auto 15px;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 50px rgb(65 50 100 / 20%);
 }
 
 .search-form {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.search-form .form-input {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(30px);
+  border-radius: 10px;
+  line-height: 19px;
+  padding: 9px 15px;
+  cursor: pointer;
+  width: 100%;
+  appearance: none;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-form .form-input:focus {
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.6);
+  color: #707579;
+}
+
+.form-button,
+.current-place-button {
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--minor-color) 9;
+  background-color: #fff;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-button:hover,
+.current-place-button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.form-button:active,
+.current-place-button:active {
+  opacity: 0.6;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.currentWeather {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(30px);
+  padding: 11px 14px;
+  border-radius: 10px;
+}
+.currentWeather:hover {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.currentWeather img {
+  height: 120px;
 }
 
 .currentWeather .city {
-	color: #0e2c48;
-	font-size: 30px;
+  color: var(--second-color);
+  font-size: 30px;
 }
 
 .currentWeather .time {
-	color: #0e2c48;
-	font-size: 20px;
-	margin-bottom: 10px;
+  color: var(--second-color);
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .minorFigures {
-	color: #707579;
-	font-size: 14px;
-	line-height: 21px;
+  color: var(--minor-color);
+  font-size: 14px;
+  line-height: 21px;
 }
 
 .majorFigures {
-	color: #0e2c48;
-	font-size: 60px;
-	margin-bottom: 35px;
-	margin-left: -20px;
+  color: var(--second-color);
+  font-size: 60px;
 }
 
 .units {
-	font-size: 16px;
-	position: relative;
-	top: -30px;
-	left: -10px;
-}
-
-.weather-forecast {
-	text-align: center;
+  font-size: 16px;
+  position: relative;
+  top: -30px;
+  left: -10px;
 }
 
 .weather-forecast .icon {
-	max-width: 60px;
+  max-width: 50px;
 }
 
 .weather-forecast .min {
-	color: #707579;
+  color: var(--minor-color);
+}
+
+.weather-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  border-radius: 10px;
+  padding: 5px 5px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.weather-card:hover {
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .values {
-	color: #264e70;
+  color: var(--major-color);
 }
 
 .signature {
-	color: #707579;
-	max-width: 600px;
-	margin: 0 auto;
-	font-size: 12px;
-	text-align: center;
+  color: var(--major-color);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 12px;
+  text-align: center;
+}
+
+.signature a {
+  color: var(--major-color);
+}
+
+.signature a:hover {
+  color: #fff;
+}
+@media (max-width: 580px) {
+  #weather-forecast-colums {
+    display: none;
+  }
+  .majorFigures {
+    font-size: 50px;
+  }
+  .units {
+    font-size: 14px;
+    position: relative;
+    top: -25px;
+    left: -10px;
+  }
+}
+@media (min-width: 581px) {
+  #weather-forecast-rows {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .currentWeather img {
+    height: 90px;
+  }
 }
